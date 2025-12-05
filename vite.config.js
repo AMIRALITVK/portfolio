@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react'
+
 
 export default defineConfig({
-  base: '/github-profile/'
-});
+  plugins: [react()],
+  base: '/github-profile/' // MUST match repo name
+})
