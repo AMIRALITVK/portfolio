@@ -1,22 +1,22 @@
 import React from 'react';
 import { ReactTyped } from 'react-typed';
 
-const Intro: React.FC = () => {
+const Hero: React.FC = () => {
   return (
-    <div>
+    <section id="hero" style={{ textAlign: 'center', padding: '4rem 2rem' }}>
       <h1>Hello, I'm Amirali 👋</h1>
       <ReactTyped
         strings={[
-          'Backend and Software Developer',
+          'Backend & Software Developer',
           'Open Source Enthusiast',
-          'Node.js Nest Expert',
+          'Nodejs | Goland | Python | Dart',
         ]}
         typeSpeed={50}
         backSpeed={30}
         loop
       />
-    </div>
+    </section>
   );
 };
 
-export default Intro;
+export default Hero;

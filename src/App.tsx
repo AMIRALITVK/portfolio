@@ -1,31 +1,30 @@
-import React, { useState } from 'react'
-import Intro from './components/Intro'
+import React, { useState, useEffect } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Skills from './components/Skills'
 import Projects from './components/Projects'
-import Stats from './components/Stats';
-import Contributions from './components/Contributions';
+import Stats from './components/Stats'
+import Contact from './components/Contact'
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
 
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
+
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    document.body.className = newTheme
+    setTheme(theme === 'light' ? 'dark' : 'light')
   }
 
   return (
     <div className={`app ${theme}`}>
-      <header style={{ textAlign: 'center', padding: '2rem' }}>
-        <Intro />
-        <button onClick={toggleTheme} style={{ marginTop: '1rem' }}>
-          Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
-        </button>
-      </header>
-      <main style={{ textAlign: 'center' }}>
-        <Stats />
-        <Contributions />
-        <Projects />
-      </main>
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <Hero />
+      <Skills />
+      <Projects />
+      <Stats />
+      <Contact />
     </div>
   )
 }
