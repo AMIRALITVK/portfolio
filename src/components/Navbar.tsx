@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaBars, FaXmark, FaSun, FaMoon } from 'react-icons/fa'
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa'
 
 interface NavbarProps {
   toggleTheme: () => void
@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
           aria-controls="navbar-menu"
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMobileMenuOpen ? <FaXmark size={24} /> : <FaBars size={24} />}
+          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
 
         <div className={`navbar-menu ${isMobileMenuOpen ? 'open' : ''}`} id="navbar-menu">

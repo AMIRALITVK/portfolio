@@ -2,15 +2,20 @@ import React from 'react';
 import { FaNodeJs, FaGitAlt, FaLinux, FaDocker } from 'react-icons/fa';
 import { SiGo, SiPython, SiDart, SiNestjs, SiExpress, SiMongodb, SiPostgresql, SiRedis, SiElectron, SiFlutter } from 'react-icons/si';
 
+interface SkillIconProps {
+  size?: number;
+  color?: string;
+}
+
 interface SkillCategory {
   name: string;
-  icon: React.ReactNode;
+  icon: React.ReactElement<SkillIconProps>;
   skills: SkillItem[];
 }
 
 interface SkillItem {
   name: string;
-  icon: React.ReactNode;
+  icon: React.ReactElement<SkillIconProps>;
   color: string;
 }
 
@@ -80,15 +85,15 @@ const Skills: React.FC = () => {
               style={{ animationDelay: `${catIndex * 100}ms` }}
               role="listitem"
             >
-              <div className="category-header">
-                <div
-                  className="category-icon"
-                  style={{ color: category.icon.props.color }}
-                >
-                  {category.icon}
-                </div>
-                <h3 className="category-name">{category.name}</h3>
-              </div>
+               <div className="category-header">
+                 <div
+                   className="category-icon"
+                   style={{ color: category.icon.props.color || 'inherit' }}
+                 >
+                   {category.icon}
+                 </div>
+                 <h3 className="category-name">{category.name}</h3>
+               </div>
               <ul className="skill-list" role="list">
                 {category.skills.map((skill, skillIndex) => (
                   <li
