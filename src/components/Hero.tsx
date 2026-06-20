@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactTyped } from 'react-typed';
-import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaNodeJs, FaDocker, FaGitAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
   return (
@@ -39,33 +39,6 @@ const Hero: React.FC = () => {
                 Get In Touch
               </a>
             </div>
-            <div className="hero-social fade-in stagger-5">
-              <a
-                href="https://github.com/amiralitvk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="GitHub"
-              >
-                <FaGithub size={22} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/amirali-tavakoli-906a07201/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin size={22} />
-              </a>
-              <a
-                href="mailto:amirtvk96@gmail.com"
-                className="social-link"
-                aria-label="Email"
-              >
-                <FaEnvelope size={22} />
-              </a>
-            </div>
           </div>
           <div className="hero-visual slide-in-right">
             <div className="hero-card fade-in stagger-3">
@@ -92,17 +65,6 @@ const Hero: React.FC = () => {
   ],
   currentlyLearning: "Distributed Systems"
 };`}</code></pre>
-              </div>
-            </div>
-            <div className="floating-elements">
-              <div className="float-item float-1" style={{ '--i': '0' } as React.CSSProperties}>
-                <FaNodeJs size={32} color="#68A063" />
-              </div>
-              <div className="float-item float-2" style={{ '--i': '1' } as React.CSSProperties}>
-                <FaDocker size={32} color="#2496ED" />
-              </div>
-              <div className="float-item float-3" style={{ '--i': '2' } as React.CSSProperties}>
-                <FaGitAlt size={32} color="#F1502F" />
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { FaGithub } from 'react-icons/fa'
 
 interface GitHubStats {
   public_repos: number
@@ -21,12 +22,38 @@ const Stats: React.FC = () => {
 
   if (!stats) return <p>Loading GitHub stats...</p>
 
+  const statItems = [
+    { label: 'Total Repositories', value: 40 },
+    { label: 'Public Repos', value: stats.public_repos },
+    { label: 'Followers', value: stats.followers },
+  ]
+
   return (
-    <section style={{ textAlign: 'center', padding: '2rem' }}>
-      <h2>GitHub Stats</h2>
-      <p>Repositories: {stats.public_repos}</p>
-      <p>Followers: {stats.followers}</p>
-      <p>Following: {stats.following}</p>
+    <section id="stats" className="section">
+      <div className="container">
+        <header className="section-header fade-in">
+          <h2 className="section-title">GitHub Stats</h2>
+          <p className="section-subtitle">
+            My open source activity at a glance
+          </p>
+        </header>
+
+        <div className="stats-grid fade-in">
+          {statItems.map((item, index) => (
+            <div
+              key={item.label}
+              className="stat-card"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="stat-icon">
+                <FaGithub size={24} />
+              </div>
+              <span className="stat-value">{item.value}</span>
+              <span className="stat-label">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
